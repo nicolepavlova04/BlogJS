@@ -65,7 +65,7 @@ module.exports = {
             res.render('article/edit',{error: errorMsg})
         }else{
             Article.update({_id: id}, {$set: {title: articleArgs.title, content: articleArgs.content}}).then(updateStatus => {
-                res.redirect('/article/details/${id}');
+                res.redirect(`/article/details/${id}`);
             })
         }
     },
